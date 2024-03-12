@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<title>MHR</title>
+<style>
+.container
+{
+width: 1001;
+padding: 11px;
+height: auto;
+background-color: rgb(64, 55, 192);
+margin-right: auto;
+margin-left: auto;
+text-align: center;
+color: rgb(255, 255, 255);
+font-family: Verdana;
+font-size: 23px;
+}
+.header {
+border-width: 100001;
+border-style: double;
+}
+</style>
+<h2 class="container">MHR - tętno maxymalne czyli najwyższa wielkość tętna jaką jesteśmy w stanie
+osiągnąc obliczana
+orientacyjnie z
+wzoru </h2>
+<script>
+function myFunction1() {
+var a = document.getElementById("a").value;
+a = parseInt(a);
+var b = document.getElementById("b").value;
+b = parseInt(b);
+var c = 0;
+c = 210 - (0.5 * a) - (0.022 * b) + 4;
+document.getElementById("wynikm").innerHTML = c + " MHR";
+}
+function myFunction2() {
+var a = document.getElementById("a").value;
+a = parseInt(a);
+var b = document.getElementById("b").value;
+b = parseInt(b);
+var c = 0;
+c = 210 - (0.5 * a) - (0.022 * b);
+document.getElementById("wynikk").innerHTML = c + " MHR";
+}
+</script>
+</head>
+<body>
+<div class="container">Kalkulator MHR
+<h3 class="header"> dla mężczyzn</br>
+210 - 0.5 x wiek - 0.022 x waga w kilogramach + 4
+</h3>
+<input type="text" id="a" value=wiek>
+<input type="text" id="b" value=masa>
+<button onclick="myFunction1()">oblicz</button>
+<div id="wynikm"></div>
+<h3 class="header"> dla kobiet</br>
+210 - 0.5 x wiek - 0.022 x waga w kilogramach
+</h3>
+<input type="text" id="a" value=wiek>
+<input type="text" id="b" value=masa>
+<button onclick="myFunction2()">oblicz</button>
+<div id="wynikk"></div>
+</body>
+</html>
